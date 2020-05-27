@@ -29,7 +29,7 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 
 # wallpaper
-exec --no-startup-id feh --bg-scale /home/bbn/Pictures/Wallpapaer/wallpaper_1.jpg
+exec --no-startup-id feh --bg-scale /home/bbn/Pictures/Wallpapaer/wallpaper_2.jpg
 
 # fcitx
 exec --no-startup-id fcitx
