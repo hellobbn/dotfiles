@@ -41,7 +41,7 @@ exec --no-startup-id udiskie
 exec --no-startup-id albert
 
 # multiple screen
-exec xrandr --output HDMI-A-2-0 --mode 1920x1080 --rate 75.00 --above eDP1 --primary
+# exec xrandr --output HDMI-A-2-0 --mode 1920x1080 --rate 75.00 --above eDP1 --primary
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
