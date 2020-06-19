@@ -96,7 +96,6 @@ duc
 dunst
 dvd+rw-tools
 ebtables
-eclipse-cpp
 edk2-ovmf
 efibootmgr
 elinks
@@ -180,7 +179,6 @@ gnome-robots
 gnome-screenshot
 gnome-session
 gnome-settings-daemon
-gnome-shell
 gnome-shell-extensions
 gnome-software
 gnome-sound-recorder
@@ -316,17 +314,12 @@ lightdm-webkit-theme-aether-git
 lightdm-webkit2-greeter
 lightsoff
 linux
-linux-custom-headers
 linux-docs
 linux-firmware
 linux-headers
 linux-lts
 linux-lts-docs
 linux-lts-headers
-linux-mainline-docs
-linux-mainline-headers
-linux-zen-docs
-linux-zen-headers
 lld
 lldb
 llvm
@@ -380,7 +373,6 @@ networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
-nomachine
 noto-fonts-cjk
 noto-fonts-emoji
 npm
@@ -417,7 +409,6 @@ picom
 pkgconf
 pkgstats
 plasma-browser-integration
-plasma-desktop
 plasma-integration
 plasma-nm
 plasma-pa
@@ -480,7 +471,6 @@ rsync
 rust
 rxvt-unicode
 rygel
-ryujinx-git
 s-nail
 scrot
 sddm-git
@@ -535,7 +525,6 @@ ttf-cascadia-code
 ttf-clear-sans
 ttf-dejavu
 ttf-nerd-fonts-symbols
-ttf-pingfang
 tty-clock
 tty-clock-tomato
 typora
