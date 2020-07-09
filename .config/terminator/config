@@ -13,18 +13,19 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#f8f8f2"
-    font = Input Mono Medium 11
+    font = Iosevka Term Semi-Bold Expanded 12
     foreground_color = "#f8f8f2"
     scrollback_infinite = True
     palette = "#262626:#e356a7:#42e66c:#e4f34a:#1779b8:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
     use_system_font = False
   [[AtomOneLight]]
     background_color = "#f9f9f9"
-    background_darkness = 0.85
+    background_darkness = 0.9
+    background_type = transparent
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#bbbbbb"
-    font = Input Mono Bold 12
+    font = Iosevka Term Semi-Bold Expanded 12
     foreground_color = "#2a2c33"
     scrollback_infinite = True
     palette = "#000000:#de3e35:#3f953a:#d2b67c:#2f5af3:#950095:#3f953a:#bbbbbb:#000000:#de3e35:#3f953a:#d2b67c:#2f5af3:#a00095:#3f953a:#ffffff"
@@ -34,7 +35,7 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#6fd3fc"
-    font = Input Mono Medium 11
+    font = Iosevka Term Semi-Bold Expanded 12
     foreground_color = "#262626"
     scrollback_infinite = True
     palette = "#000000:#f8282a:#328a5d:#fa701d:#135cd0:#9f00bd:#33c3c1:#b3b3b3:#555753:#fb0416:#2cc631:#fdd727:#1670ff:#e900b0:#3ad5ce:#eeeeec"
@@ -44,7 +45,7 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#ff6a00"
-    font = Input Mono Medium 11
+    font = Iosevka Term Semi-Bold Expanded 12
     foreground_color = "#5c6773"
     scrollback_infinite = True
     palette = "#000000:#ff3333:#86b300:#f29718:#41a6d9:#f07178:#4dbf99:#ffffff:#323232:#ff6565:#b8e532:#ffc94a:#73d8ff:#ffa3aa:#7ff1cb:#ffffff"
@@ -54,7 +55,7 @@
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#3f3f3f"
-    font = Input Mono Medium 11
+    font = Iosevka Term Semi-Bold Expanded 12
     foreground_color = "#3e3e3e"
     scrollback_infinite = True
     palette = "#3e3e3e:#970b16:#07962a:#f8eec7:#003e8a:#e94691:#89d1ec:#ffffff:#666666:#de0000:#87d5a2:#f1d007:#2e6cba:#ffa29f:#1cfafe:#ffffff"
