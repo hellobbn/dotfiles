@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/lib/ccache/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bbn/.oh-my-zsh"
@@ -68,7 +69,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git taskwarrior timewarrior)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -138,3 +139,7 @@ SPACESHIP_HOST_SHOW=always
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_CHAR_SYMBOL="-> "
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+alias cdllvm="cd /home/bbn/Code/llvm/llvm-project"
+alias ellvm="cdllvm; nvim ."
