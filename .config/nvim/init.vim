@@ -104,7 +104,7 @@ call plug#end()
 
 " -- color scheme
 colorscheme one 
-set background=light
+set background=dark
 " -- always show status bar
 set laststatus=2
 

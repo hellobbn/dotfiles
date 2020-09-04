@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/lib/ccache/bin/:$PATH
+# export PATH=/usr/lib/ccache/bin/:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bbn/.oh-my-zsh"
@@ -69,7 +69,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git taskwarrior timewarrior)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,7 +139,23 @@ SPACESHIP_HOST_SHOW=always
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_CHAR_SYMBOL="-> "
-export http_proxy=http://127.0.0.1:7890
-export https_proxy=http://127.0.0.1:7890
 alias cdllvm="cd /home/bbn/Code/llvm/llvm-project"
 alias ellvm="cdllvm; nvim ."
+
+# WSL Proxy
+proxyIp=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
+
+inproxy () {
+  export ALL_PROXY="socks5://$proxyIp:7890"
+  export all_proxy="socks5://$proxyIp:7890"
+  export http_proxy=http://$proxyIp:7890
+  export https_proxy=http://$proxyIp:7890
+}
+
+noproxy () {
+  unset ALL_PROXY
+  unset all_proxy
+  unset http_proxy
+  unset https_proxy
+}
+
