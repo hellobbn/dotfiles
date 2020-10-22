@@ -7,7 +7,21 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/lib/ccache/bin/:$PATH
+
+#
+# Useful functions
+#
+
+# Use ccache compiler
+useccache() {
+  export PATH=/usr/lib/ccache/bin/:$PATH
+}
+
+# Start docker-wechat
+wechat() {
+  curl -sL https://raw.githubusercontent.com/huan/docker-wechat/master/dochat.sh \
+  | DOCHAT_WECHAT_VERSION=2.8.0.112 DOCHAT_DPI=192 bash
+}
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bbn/.oh-my-zsh"
@@ -105,6 +119,7 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias e="nvim"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
@@ -150,6 +165,7 @@ export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 alias cdllvm="cd /home/bbn/Code/llvm/llvm-project"
 alias ellvm="cdllvm; nvim ."
+alias se="sudoedit"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
