@@ -9,6 +9,7 @@ set cursorcolumn
 set showcmd
 set incsearch
 set hlsearch
+set colorcolumn=80
 
 " Per-directory .vimrc files
 set exrc
@@ -20,8 +21,8 @@ set mouse=a
 set tabstop=2
 set shiftwidth=2
 set expandtab
-highlight Cursor guifg=white guibg=black ctermfg=255 ctermbg=232
-set guicursor=n-v-c-sm:hor25,i-ci-ve:hor25,c-cr-o:hor25
+" highlight Cursor guifg=white guibg=black ctermfg=255 ctermbg=232
+" set guicursor=n-v-c-sm:hor25,i-ci-ve:hor25,c-cr-o:hor25
 
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 "set list
@@ -96,9 +97,13 @@ Plug 'kshenoy/vim-signature'
 " Color themes
 Plug 'rakr/vim-one'
 Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
 
 " highlighting tool
 Plug 'sheerun/vim-polyglot'
+
+" LaTeX
+Plug 'lervag/vimtex'
 call plug#end()
 
 " ---------- Plugin specific ----------
@@ -106,9 +111,9 @@ call plug#end()
 " -- color scheme
 set termguicolors     " enable true colors support
 " let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu 
 
 " -- always show status bar
 set laststatus=2
@@ -198,6 +203,10 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> \ge <Plug>(coc-definition)
+nmap <silent> \gs :sp<CR><Plug>(coc-definition)
+nmap <silent> \gv :vsp<CR><Plug>(coc-definition)
+nmap <silent> \gt :vsp<CR><Plug>(coc-definition)<C-W>T
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -302,3 +311,12 @@ let g:SignatureMarkTextHLDynamic=1
 " -- doxygen
 let g:load_doxygen_syntax=1
 let g:doxygen_enhanced_colour=1
+
+" Indent line
+" let g:indentLine_char = ''
+" let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 0 
+let g:indentLine_setColors = 0
+
+" VimTex
+let g:tex_flavor='latex'
