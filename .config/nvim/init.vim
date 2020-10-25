@@ -320,3 +320,7 @@ let g:indentLine_setColors = 0
 
 " VimTex
 let g:tex_flavor='latex'
+
+" Reset cursor on exit
+" ??
+au VimLeave * set guicursor=a:ver10-blinkon0
