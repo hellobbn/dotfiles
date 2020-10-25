@@ -23,6 +23,11 @@ wechat() {
   | DOCHAT_WECHAT_VERSION=2.8.0.112 DOCHAT_DPI=192 bash
 }
 
+# Reset cursor
+rcu() {
+  printf '\033[6 q'
+}
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bbn/.oh-my-zsh"
 
