@@ -1,0 +1,16 @@
+# Gitignore: from https://gist.github.com/pablox-cl/6664716
+# ignore everything
+*
+!.gitignore
+
+# except PKGBUILD needed files
+!PKGBUILD
+!*.install
+!ChangeLog
+
+# common wing-man files
+!*.diff
+!*.patch
+
+# markdown files
+!*.md

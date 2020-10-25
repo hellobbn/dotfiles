@@ -1,0 +1,53 @@
+# Maintainer: Luofan Chen <clfbbn@gmail.com>
+
+pkgname=qpanda2-git
+pkgver=v2.1.0.r65.gc70c411
+pkgrel=1
+url="https://github.com/OriginQ/QPanda-2"
+license=('APACHE')
+arch=('x86_64')
+makedepends=('git' 'cmake')
+source=('qpanda2::git+https://github.com/OriginQ/QPanda-2')
+
+md5sums=('SKIP')
+sha512sums=('SKIP')
+
+pkgver() {
+    cd "${srcdir}/qpanda2"
+    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+    cd "${srcdir}/qpanda2" 
+}
+
+build() {
+    cd ${srcdir}/qpanda2
+    mkdir -p build && cd build
+    cmake -G Ninja \
+          -D CMAKE_INSTALL_PREFIX=/usr \
+          -D FIND_CUDA=ON \
+          -D USE_CHEMIQ=ON \
+          -D USE_PYQPANDA=ON \
+          ..
+    ninja
+
+    # For pyqpanda
+    # Referenced from https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=qpanda-2-git
+    cd "${srcdir}/qpanda2/pyQPanda"
+    python setup.py build
+    cp ../build/lib/pyQPanda.so ./pyqpanda
+    cp ../build/lib/pyQPandaOperator.so ./pyqpanda/Operator
+}
+
+package() {
+    cd "${srcdir}/qpanda2/build"
+    DESTDIR="$pkgdir" ninja install
+
+    # Install license
+    install -Dm0644 $srcdir/qpanda2/LICENSE -t $pkgdir/usr/share/licenses/$pkgname
+
+    # Install pyQPanda
+    cd $srcdir/qpanda2/pyQPanda
+    python setup.py install --root=$pkgdir --optimize=1
+}
