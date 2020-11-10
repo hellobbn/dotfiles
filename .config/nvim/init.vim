@@ -70,6 +70,7 @@ endif
 Plug 'zchee/deoplete-clang'
 
 " fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Pandoc VIM
@@ -324,3 +325,14 @@ let g:tex_flavor='latex'
 " Reset cursor on exit
 " ??
 au VimLeave * set guicursor=a:ver10-blinkon0
+
+" hi Normal guibg=NONE ctermbg=NONE
+
+" Always use the system clipboard
+" set clipboard+=unnamedplus
+
+" Resize the windows size when entering
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+
+" pandoc disable spell check
+let g:pandoc#modules#disabled = ["spell"]
