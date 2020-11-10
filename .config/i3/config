@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Input Mono 10
+font pango:Iosevka 10 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -22,16 +22,19 @@ font pango:Input Mono 10
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-exec xrdb -merge /home/bbn/.Xresources
+exec --no-startup-id xrdb -merge /home/bbn/.Xresources
 
 # picom
 exec --no-startup-id picom
 
 # dunst
-exec --no-startup-id dunst
+# exec --no-startup-id dunst
+
+# Deadd notification center
+exec --no-startup-id deadd-notification-center
 
 # wallpaper
-exec --no-startup-id feh --bg-scale /home/bbn/Pictures/Wallpaper/wallpaper_2.jpg 
+exec --no-startup-id feh --bg-scale /home/bbn/Pictures/Wallpaper/DOTA2/degraded_soul_hunter_degraded_soul_hunter_loading.png
 
 # fcitx
 exec --no-startup-id fcitx
@@ -49,7 +52,7 @@ exec --no-startup-id /home/bbn/.config/polybar/launch.sh
 # exec xrandr --output HDMI-A-2-0 --mode 1920x1080 --rate 75.00 --above eDP1 --primary
 
 # HiDPI
-exec xrandr --dpi 192 
+exec --no-startup-id xrandr --dpi 192 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -225,8 +228,37 @@ bindsym $mod+r mode "resize"
 # bbn defined things
 focus_follows_mouse no
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1 
 for_window [class="albert"] border pixel 0
-gaps inner 5
-gaps outer 5
+gaps inner 4 
+gaps outer 4 
 
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+##
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
