@@ -7,7 +7,7 @@ foreground = #f8f8f2
 
 modules-left = i3 separatordotted mpd separatordotted title 
 modules-center = 
-modules-right = memory cpu temperature separatordotted system-usb-udev pulseaudio wlan bluetooth battery separatordotted date notifications 
+modules-right = memory cpu temperature separatordotted system-usb-udev backlight pulseaudio wlan bluetooth battery separatordotted date notifications 
 
 [module/memory]
 type = internal/memory
@@ -50,7 +50,7 @@ ramp-2-foreground = "#ffb86c"
 type = internal/fs
 mount-0 = /home
 interval = 10
-fixed-values = true
+fixed-valubacklight es = true
 format-mounted-prefix = 
 format-mounted-prefix-foreground = "#ff79c6"
 format-mounted = <label-mounted>
@@ -66,6 +66,31 @@ exec = ~/.config/polybar/system-usb-udev.sh
 tail = true
 click-left = ~/.config/polybar/system-usb-udev.sh --mount &
 click-right = ~/.config/polybar/system-usb-udev.sh --unmount &
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+
+; Enable changing the backlight with the scroll wheel (unreleased)
+; NOTE: This may require additional configuration on some systems. Polybar will
+; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
+; to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT. 
+; The recommended way is to add the user to the
+; `video` group and give that group write-privileges for the `brightness` file.
+; See the ArchWiki for more information:
+; https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
+enable-scroll = true
+
+format = <ramp><label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-4 = 
 
 [module/date]
 type = internal/date
