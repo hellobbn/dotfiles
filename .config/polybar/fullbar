@@ -1,6 +1,5 @@
 width                    = 100%
-height                   = 40
-dpi                      = 192
+height                   = 20 
 radius                   = 0
 line-size                = 0
 bottom                   = true

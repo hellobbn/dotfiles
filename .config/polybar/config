@@ -5,9 +5,9 @@ include-file = ~/.config/polybar/fullbar
 background = #bb282a36
 foreground = #f8f8f2
 
-modules-left = i3 separatordotted mpd separatordotted title 
+modules-left = i3 separatordotted separatordotted title 
 modules-center = 
-modules-right = memory cpu temperature separatordotted system-usb-udev backlight pulseaudio wlan bluetooth battery separatordotted date notifications 
+modules-right = memory cpu temperature separatordotted system-usb-udev pulseaudio wlan bluetooth separatordotted date notifications 
 
 [module/memory]
 type = internal/memory
@@ -31,7 +31,7 @@ format-prefix-padding = 1
 
 [module/temperature]
 type = internal/temperature
-hwmon-path = /sys/devices/virtual/thermal/thermal_zone8/temp 
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp2_input 
 base-temperature = 20
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
@@ -126,7 +126,7 @@ time-format = %H:%M
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlo1
 interval = 5
 label-connected =   %essid%
 label-disconnected =  
