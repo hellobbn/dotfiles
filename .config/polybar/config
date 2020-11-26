@@ -7,7 +7,7 @@ foreground = #f8f8f2
 
 modules-left = i3 separatordotted mpd separatordotted title 
 modules-center = 
-modules-right = memory cpu temperature separatordotted system-usb-udev backlight pulseaudio wlan bluetooth battery separatordotted date notifications 
+modules-right = memory cpu temperature separatordotted system-usb-udev backlight pulseaudio wlan bluetooth battery separatordotted date 
 
 [module/memory]
 type = internal/memory

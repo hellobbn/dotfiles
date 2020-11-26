@@ -11,6 +11,7 @@ border-color = "#44475a"
 font-0 = "Iosevka SS03:size=10;2"
 font-1 = "Iosevka SS03:style=Bold:size=10;2"
 font-2 = "Symbols Nerd Font:size=11;2"
+font-3 = "Sarasa Mono Slab SC:size=11;2"
 
 override-redirect = false
 ;offset-x = 1%

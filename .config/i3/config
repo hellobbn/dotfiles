@@ -28,16 +28,19 @@ exec --no-startup-id xrdb -merge /home/bbn/.Xresources
 exec --no-startup-id picom --experimental-backends
 
 # dunst
-# exec --no-startup-id dunst
+exec --no-startup-id dunst
 
 # Deadd notification center
-exec --no-startup-id deadd-notification-center
+# exec --no-startup-id deadd-notification-center
 
 # wallpaper
 exec --no-startup-id feh --bg-scale /home/bbn/Pictures/Wallpaper/DOTA2/degraded_soul_hunter_degraded_soul_hunter_loading.png
 
 # fcitx
-exec --no-startup-id fcitx
+# exec --no-startup-id fcitx
+
+# ibus
+exec --no-startup-id ibus-daemon --xim -d -r
 
 # udisk automounter
 exec --no-startup-id udiskie
@@ -50,9 +53,16 @@ exec --no-startup-id /home/bbn/.config/polybar/launch.sh
 
 # multiple screen
 # exec xrandr --output HDMI-A-2-0 --mode 1920x1080 --rate 75.00 --above eDP1 --primary
+exec --no-startup-id xrandr --auto
 
 # HiDPI
 exec --no-startup-id xrandr --dpi 192 
+
+# Start a terminal
+exec --no-startup-id kitty
+
+# Dynamic changing the name of workspace
+exec_always --no-startup-id /usr/bin/i3wsr
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -63,7 +73,7 @@ exec --no-startup-id xrandr --dpi 192
 exec --no-startup-id nm-applet
 
 # auto lock
-exec --no-startup-id xautolock -time 60 -locker i3lock-fancy
+# exec --no-startup-id xautolock -time 60 -locker i3lock-fancy
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -158,16 +168,16 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2 
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1

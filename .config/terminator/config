@@ -20,7 +20,8 @@
     use_system_font = False
   [[AtomOneLight]]
     background_color = "#f9f9f9"
-    background_darkness = 0.27
+    background_darkness = 0.3
+    background_type = transparent
     backspace_binding = automatic
     delete_binding = automatic
     cursor_blink = False
@@ -43,6 +44,8 @@
     use_system_font = False
   [[ayu_light]]
     background_color = "#fafafa"
+    background_darkness = 0.8
+    background_type = transparent
     cursor_blink = False
     cursor_shape = underline
     cursor_color = "#ff6a00"

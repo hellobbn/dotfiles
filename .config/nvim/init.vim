@@ -105,6 +105,12 @@ Plug 'sheerun/vim-polyglot'
 
 " LaTeX
 Plug 'lervag/vimtex'
+
+" fastfold
+Plug 'Konfekt/FastFold'
+
+" indent guide
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " ---------- Plugin specific ----------
@@ -129,10 +135,10 @@ let g:airline_theme='one'
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 
 " -- indent guide
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-nmap <silent> <leader>i :IndentGuidesToggle
+" let g:indent_guides_enable_on_vim_startup=1
+" let g:indent_guides_start_level=1
+" let g:indent_guides_guide_size=1
+" nmap <silent> <leader>i :IndentGuidesToggle
 
 " -- deoplete
 let g:deoplete#enable_at_startup=0
@@ -336,3 +342,5 @@ autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
 " pandoc disable spell check
 let g:pandoc#modules#disabled = ["spell"]
+let g:pandoc#syntax#codeblocks#embeds#langs = ["c"]
+let g:pandoc#formatting#mode = "hA"
